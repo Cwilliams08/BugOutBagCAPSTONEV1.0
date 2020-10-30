@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <table>
+        <tr>
+            <td>@Html.ActionLink("Update your Password and Phone Number", "UpdateUser", "BobOwner")</td>
+            <td>@Html.ActionLink("Search friend by ID", "SearchBobOwner", "BobOwner")</td>
+            <td>@Html.ActionLink("Modify your Bug Out Bag", "BugOutBag", "BugOutBag")</td>
+            <td>@Html.ActionLink("View Supplier's Inventory", "ViewSupplierInventory", "SupplierInventory") </td>
+        </tr>
+    </table>
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

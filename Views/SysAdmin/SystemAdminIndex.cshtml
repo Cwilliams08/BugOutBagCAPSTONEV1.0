@@ -1,0 +1,21 @@
+﻿@model BugOutBagCAPSTONE.Models.BobOwnerViewModel
+
+@{
+    ViewBag.Title = "AdministratorIndex";
+}
+
+<h2>Greetings Administrator!</h2>
+
+
+@using (Html.BeginForm("AdministratorIndex", "SysAdmin", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <th>System</th>
+            <th>Administrator</th>
+        </tr>
+        <tr>
+            <td><h2> Login Index</h2></td>
+        </tr>        
+    </table>
+}

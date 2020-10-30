@@ -1,0 +1,25 @@
+﻿@model BugOutBagCAPSTONE.Models.SupplierViewModel
+
+@{
+    ViewBag.Title = "SupplierIndex";
+    Layout = "~/Views/Shared/SupplierLayout.cshtml";
+}
+
+<h2>Greetings</h2>
+<h2>Your current store inventory is listed below!</h2>
+
+@using (Html.BeginForm("SupplierIndex", "Supplier", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><h2></h2></td>
+        </tr>
+        <tr>
+            <td><input type="submit" /></td>
+        </tr>
+    </table>
+}

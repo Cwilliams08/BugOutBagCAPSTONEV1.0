@@ -1,0 +1,26 @@
+﻿@model BugOutBagCAPSTONE.Models.BobOwnerViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>User Login</h2>
+
+@using (Html.BeginForm("Login", "BobOwner", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(x => x.SingleBobOwner.UserName)</td>
+            <td>@Html.PasswordFor(x => x.SingleBobOwner.PASSWORD)</td>
+        </tr>
+        <tr>
+            <td><input type="submit" /></td>
+        </tr>
+    </table>
+}

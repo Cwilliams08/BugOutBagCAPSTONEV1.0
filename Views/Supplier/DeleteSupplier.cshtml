@@ -1,0 +1,23 @@
+﻿@model BugOutBagCAPSTONE.Models.SupplierViewModel
+
+@{
+    ViewBag.Title = "DeleteSupplier";
+    Layout = "~/Views/Shared/SupplierLayout.cshtml";
+}
+
+<h2>Delete Item</h2>
+@using (Html.BeginForm("DeleteSupplier", "Supplier", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Which vendor would you like to delete?</td>
+
+        </tr>
+        <tr>
+            <td>@Html.DropDownListFor(x => x.SingleSupplier.PKSupplierID, Model.SupplierSelectList)</td>
+
+        </tr>
+
+        <tr><td><input type="submit" /></td></tr>
+    </table>
+}

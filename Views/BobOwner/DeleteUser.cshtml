@@ -1,0 +1,23 @@
+﻿@model BugOutBagCAPSTONE.Models.BobOwnerViewModel
+
+@{
+    ViewBag.Title = "DeleteUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete Item</h2>
+@using (Html.BeginForm("DeleteUser", "BobOwner", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Which user would you like to delete?</td>
+
+        </tr>
+        <tr>
+            <td>@Html.DropDownListFor(x => x.SingleBobOwner.PKUserID, Model.BobOwnerSelectList)</td>
+
+        </tr>
+
+        <tr><td><input type="submit" /></td></tr>
+    </table>
+}

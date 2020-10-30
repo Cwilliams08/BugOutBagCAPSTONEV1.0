@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <table>
+        <tr>
+@if (Session["Role"] != null && Session["Role"] != "3")
+            {
+            <td>@Html.ActionLink("Add new Bug Out Bag", "AddBugOutBag", "BugOutBag")</td>
+            <td>@Html.ActionLink("Update your Bug Out Bags", "UpdateBugOutBag", "BugOutBag")</td>
+            <td>@Html.ActionLink("Delete Bug Out Bags", "DeleteBugOutBag", "BugOutBag")</td>
+            <td>@Html.ActionLink("Choose new Bug Out Bag", "ViewBagList", "BugOutBag") </td>
+            <td>@Html.ActionLink("View List of Bug Out Bags", "ViewBugOutBag", "BugOutBag")</td>
+            <td>@Html.ActionLink("Home", "Index", "BobOwner") </td>
+            }
+        </tr>
+    </table>
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

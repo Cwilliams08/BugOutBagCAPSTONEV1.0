@@ -1,0 +1,22 @@
+﻿@model BugOutBagCAPSTONE.Models.BobOwnerViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Greetings</h2>
+<h2>Thank you for visiting Preppers United!</h2>
+
+@using (Html.BeginForm("Index", "BobOwner", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Login", "UserLogin", "BobOwner") </td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,24 @@
+﻿@model BugOutBagCAPSTONE.Models.SupplierViewModel
+
+@{
+    ViewBag.Title = "SupplierLogin";
+}
+
+<h2>Vendor Login</h2>
+
+@using (Html.BeginForm("SupplierLogin", "Supplier", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <th>Vendor Identification</th>
+            <th>Password</th>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(x => x.SingleSupplier.VendorID)</td>
+            <td>@Html.PasswordFor(x => x.SingleSupplier.PASSWORD)</td>
+        </tr>
+        <tr>
+            <td><input type="submit" /></td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,31 @@
+﻿@model BugOutBagCAPSTONE.Models.BobOwnerViewModel
+
+@{
+    ViewBag.Title = "RegisterUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>User Registration</h2>
+
+@using (Html.BeginForm("RegisterUser", "BobOwner", FormMethod.Post))
+{
+
+
+
+    <table>
+        <tr>
+            <td>User Name</td>
+            <td>Phone Number</td>
+            <td>Password</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(XhtmlMobileDocType => XhtmlMobileDocType.SingleBobOwner.UserName)</td>
+            <td>@Html.TextBoxFor(XhtmlMobileDocType => XhtmlMobileDocType.SingleBobOwner.PHONENUM)</td>
+            <td>@Html.PasswordFor(XhtmlMobileDocType => XhtmlMobileDocType.SingleBobOwner.PASSWORD)</td>
+            <td>@Html.DropDownListFor(x => x.SingleBobOwner.UserRole.PKRoleID, Model.UserRoleSelectList) </td>
+        </tr>
+        <tr>
+            <td><input type="submit" title="Register User" /></td>
+        </tr>
+    </table>
+}

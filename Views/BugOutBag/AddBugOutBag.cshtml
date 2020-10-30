@@ -1,0 +1,26 @@
+﻿@model BugOutBagCAPSTONE.Models.BugOutBagViewModel
+
+@{
+    ViewBag.Title = "AddBugOutBag";
+    Layout = "~/Views/Shared/BugOutBagLayout.cshtml";
+}
+
+<h2>Add Item</h2>
+
+@using (Html.BeginForm("AddBugOutBag", "BugOutBag", FormMethod.Post))
+{
+
+
+
+    <table>
+        <tr>
+            <td>Bag Name</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(XhtmlMobileDocType => XhtmlMobileDocType.SingleBugOutBag.BagName)</td>
+        </tr>
+        <tr>
+            <td><input type="submit" title="Add Item" /></td>
+        </tr>
+    </table>
+}

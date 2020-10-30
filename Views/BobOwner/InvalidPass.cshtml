@@ -1,0 +1,24 @@
+﻿@model BugOutBagCAPSTONE.Models.BobOwnerViewModel
+
+@{
+    ViewBag.Title = "InvalidPass";
+    Layout = "~/Views/Shared/Error.cshtml";
+
+}
+
+<h2>Invalid Action Performed</h2>
+
+@using (Html.BeginForm("InvalidPass", "BobOwner", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <th></th>
+        </tr>
+        <tr>
+            <td>You've accessed this page due to an error</td>
+            <td>If you feel you have reached this page in error, please contact the site Administrator</td>
+            <td>Casey Williams (916) 705-9637</td>
+            <td>Casey.Williams@PreppersUnited.com</td>
+        </tr>
+    </table>
+}

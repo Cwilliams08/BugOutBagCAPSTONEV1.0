@@ -1,0 +1,31 @@
+﻿@model BugOutBagCAPSTONE.Models.BobOwnerViewModel
+
+@{
+    ViewBag.Title = "UpdateUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Update User</h2>
+@using (Html.BeginForm("UpdateUser", "BobOwner", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Which BobOwner?</td>
+            <td>Correct Password</td>
+            <td>Correct Username</td>
+            <td>Correct Phone Number</td>
+        </tr>
+        <tr>
+            <td>@Html.DropDownListFor(x => x.SingleBobOwner.PKUserID, Model.BobOwnerSelectList)</td>
+            <td>@Html.PasswordFor(x => x.SingleBobOwner.PASSWORD)</td>
+            <td>@Html.TextBoxFor(x => x.SingleBobOwner.UserName)</td>
+            <td>@Html.TextBoxFor(x => x.SingleBobOwner.PHONENUM)</td>
+    @if (Session["Role"] != null && (int)Session["Role"] != 3)
+            {
+            <td>@Html.DropDownListFor(x => x.SingleBobOwner.UserRole.PKRoleID, Model.UserRoleSelectList) </td>
+            }
+        </tr>
+
+        <tr><td><input type="submit" /></td></tr>
+    </table>
+}

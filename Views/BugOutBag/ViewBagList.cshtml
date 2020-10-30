@@ -1,0 +1,23 @@
+﻿@model BugOutBagCAPSTONE.Models.BugOutBagViewModel
+
+@{
+    ViewBag.Title = "ViewBagList";
+    Layout = "~/Views/Shared/BugOutBagLayout.cshtml";
+}
+<h2>Hello, </h2>
+<h2>Bag Listing</h2>
+@using (Html.BeginForm("ViewBagList", "BugOutBag", FormMethod.Post))
+{ 
+<table>
+    <tr>
+        <td>Which Bug Out Bag would you like to view?</td>
+
+    </tr>
+    <tr>
+        <td>@Html.DropDownListFor(x => x.SingleBugOutBag.PKBugOutBagID, Model.BugOutBagSelectList)</td>
+
+    </tr>
+    <tr><td><input type="submit" /></td></tr>
+    
+</table>
+    }

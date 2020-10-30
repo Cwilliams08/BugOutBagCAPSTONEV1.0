@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/NewBootStrap.css" rel="stylesheet" />
+</head>
+<body>
+    <table>
+        <tr>     
+            @if (Session["Role"] != null && (int)Session["Role"] != 3)
+            { 
+            <td>@Html.ActionLink("Update your Password and Phone Number", "UpdateUser", "BobOwner")</td>            
+            <td>@Html.ActionLink("Search friend by ID", "SearchBobOwner", "BobOwner")</td>
+            <td>@Html.ActionLink("Modify your Bug Out Bag", "ViewBagList", "BugOutBag")</td>
+            <td>@Html.ActionLink("View Supplier's Inventory", "ViewSupplierInventory", "Supplier") </td>
+            <td>@Html.ActionLink("Home", "Index", "BobOwner") </td>
+            <td>@Html.ActionLink("Log Out", "UniversalHomePage", "BobOwner") </td>
+            }
+            @if (Session["Role"] != null && (int)Session["Role"] != 1)
+            {
+                <td>@Html.ActionLink("Add User", "AddUser", "BobOwner")</td>
+            }
+            @if (Session["Role"] != null && (int)Session["Role"] != 1)
+            {
+                <td>@Html.ActionLink("Delete User", "DeleteUser", "BobOwner")</td>
+            }
+            @if (Session["Role"] != null && (int)Session["Role"] != 1)
+            {
+                <td>@Html.ActionLink("Update User", "UpdateUser", "BobOwner")</td>                
+            }            
+            @if (Session["Role"] != null && (int)Session["Role"] != 1)
+            {
+                <td>@Html.ActionLink("Add Supplier", "AddSupplier", "Supplier")</td>
+            }
+            @if (Session["Role"] != null && (int)Session["Role"] != 1)
+            {
+                <td>@Html.ActionLink("Delete Supplier", "DeleteSupplier", "Supplier")</td>
+            }
+            @if (Session["Role"] != null && (int)Session["Role"] != 1)
+            {
+                <td>@Html.ActionLink("Update Supplier", "UpdateSupplier", "Supplier")</td>
+            }
+        </tr>
+    </table>
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

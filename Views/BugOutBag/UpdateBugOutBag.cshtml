@@ -1,0 +1,23 @@
+﻿@model BugOutBagCAPSTONE.Models.BugOutBagViewModel
+
+@{
+    ViewBag.Title = "UpdateBugOutBag";
+    Layout = "~/Views/Shared/BugOutBagLayout.cshtml";
+}
+
+<h2>Update Item</h2>
+@using (Html.BeginForm("UpdateBugOutBag", "BugOutBag", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Which Bag?</td>
+            <td>Correct Name</td>
+        </tr>
+        <tr>
+            <td>@Html.DropDownListFor(x => x.SingleBugOutBag.PKBugOutBagID, Model.BugOutBagSelectList)</td>
+            <td>@Html.TextBoxFor(x => x.SingleBugOutBag.BagName)</td>
+        </tr>
+
+        <tr><td><input type="submit" /></td></tr>
+    </table>
+}

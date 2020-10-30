@@ -1,0 +1,22 @@
+﻿@model BugOutBagCAPSTONE.Models.BobOwnerViewModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Welcome!</h2>
+
+@using (Html.BeginForm("UniversalHomePage", "BobOwner", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <th>Please Select an option</th>
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Log in as a User", "Login", "BobOwner")</td>
+            <td>@Html.ActionLink("Log in as a Vendor", "SupplierLogin", "Supplier")</td>
+            <td>@Html.ActionLink("Register as a User", "RegisterUser", "BobOwner")</td>
+            <td>@Html.ActionLink("Register as a Vendor", "SupplierRegistration", "Supplier") </td>
+        </tr>
+    </table>
+}

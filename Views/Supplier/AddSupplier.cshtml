@@ -1,0 +1,31 @@
+﻿@model BugOutBagCAPSTONE.Models.SupplierViewModel
+
+@{
+    ViewBag.Title = "AddSupplier";
+    Layout = "~/Views/Shared/SupplierLayout.cshtml";
+}
+
+<h2>Add Vendor</h2>
+
+@using (Html.BeginForm("AddSupplier", "Supplier", FormMethod.Post))
+{
+
+
+
+    <table>
+        <tr>
+            <td>Vendor Name</td>
+            <td>Phone Num</td>
+            <td>Password</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(XhtmlMobileDocType => XhtmlMobileDocType.SingleSupplier.VendorID)</td>
+            <td>@Html.TextBoxFor(XhtmlMobileDocType => XhtmlMobileDocType.SingleSupplier.PHONENUM)</td>
+            <td>@Html.PasswordFor(XhtmlMobileDocType => XhtmlMobileDocType.SingleSupplier.PASSWORD)</td>
+            <td>@Html.DropDownListFor(x => x.SingleSupplier.UserRole.PKRoleID, Model.UserRoleSelectList) </td>
+        </tr>
+        <tr>
+            <td><input type="submit" title="Add Vendor" /></td>
+        </tr>
+    </table>
+}

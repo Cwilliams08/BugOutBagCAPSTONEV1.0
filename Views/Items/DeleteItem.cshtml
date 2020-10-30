@@ -1,0 +1,23 @@
+﻿@model BugOutBagCAPSTONE.Models.ItemViewModel
+
+@{
+    ViewBag.Title = "DeleteItem";
+    Layout = "~/Views/Shared/SupplierLayout.cshtml";
+}
+
+<h2>Delete Item</h2>
+@using (Html.BeginForm("DeleteItem", "Items", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Which Item would you like to delete?</td>
+
+        </tr>
+        <tr>           
+            <td>@Html.DropDownListFor(x => x.SingleItem.PKItemID, Model.ItemSelectList)</td>
+
+        </tr>
+
+        <tr><td><input type="submit" /></td></tr>
+    </table>
+}

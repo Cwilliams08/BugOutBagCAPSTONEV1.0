@@ -1,0 +1,44 @@
+﻿@model BugOutBagCAPSTONE.Models.BugOutBagViewModel
+
+@{
+    ViewBag.Title = "AddContentsToBugOutBag";
+    Layout = "~/Views/Shared/BugOutBagLayout.cshtml";
+}
+
+<h2>What items would you like to add to your current bag bag?</h2>
+
+@using (Html.BeginForm("AddContentsToBugOutBag", "BagContents", FormMethod.Post))
+
+{
+
+
+
+<table>
+    <tr>
+        <th>Supplier Name</th>
+        <th>Item Name</th>
+        <th>Item Cost</th>
+        <th>Item Survival Rate Increase</th>
+    </tr>
+    @for (int Index = 0; Index < Model.GroupOfItems.Count(); Index++)
+    {
+        <tr>
+
+            @{
+                Model.SingleItem.PKItemID = Model.GroupOfItems[Index].PKItemID;
+            }
+            @Html.HiddenFor(x => x.SingleItem.PKItemID)
+            
+            <td>@Html.DisplayFor(x => x.GroupOfItems[Index].FKSupplierID)</td>
+            <td>@Html.DisplayFor(x => x.GroupOfItems[Index].ItemName)</td>
+            <td>@Html.DisplayFor(x => x.GroupOfItems[Index].Cost)</td>
+            <td>@Html.DisplayFor(x => x.GroupOfItems[Index].SurvRate)</td>
+            @if (!Session.IsNewSession && Session["Role"] != null && 1 == (int)Session["Role"])
+            {
+                <td><input type="submit" value="Add Item to Bug Out Bag" /></td>
+            }           
+        </tr>
+    }
+
+</table>
+}

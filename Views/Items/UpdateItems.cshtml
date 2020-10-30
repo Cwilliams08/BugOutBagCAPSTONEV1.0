@@ -1,0 +1,29 @@
+﻿@model BugOutBagCAPSTONE.Models.ItemViewModel
+
+@{
+    ViewBag.Title = "UpdateItems";
+    Layout = "~/Views/Shared/SupplierLayout.cshtml";
+}
+
+<h2>Update Item</h2>
+@using (Html.BeginForm("UpdateItems", "Items", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Which Item?</td>     
+            <td>Correct Name</td>      
+            <td>Details</td>
+            <td>Correct Cost</td>
+            <td>Correct Survival Rate Increase</td>
+        </tr>
+        <tr>
+            <td>@Html.DropDownListFor(x => x.SingleItem.PKItemID, Model.ItemSelectList)</td>
+            <td>@Html.TextBoxFor(x => x.SingleItem.ItemName)</td>
+            <td>@Html.TextBoxFor(x => x.SingleItem.Details)</td>
+            <td>@Html.TextBoxFor(x => x.SingleItem.Cost)</td>
+            <td>@Html.TextBoxFor(x => x.SingleItem.SurvRate)</td>
+        </tr>
+
+        <tr><td><input type="submit" /></td></tr>
+    </table>
+}

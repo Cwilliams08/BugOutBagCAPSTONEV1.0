@@ -1,0 +1,32 @@
+﻿@model BugOutBagCAPSTONE.Models.BugOutBagViewModel
+
+@{
+    ViewBag.Title = "ViewBugOutBag";
+    Layout = "~/Views/Shared/BugOutBagLayout.cshtml";
+}
+
+<h2>Greetings</h2>
+<h2>Your current bag inventory is listed below</h2>
+
+@using (Html.BeginForm("ViewBugOutBag", "BugOutBag", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <th>Bag Name</th>
+            <th>Item Name</th>
+        </tr>
+        @for (int Index = 0; Index < Model.GroupOfBagContents.Count(); Index++)
+        {
+            <tr>
+                @Html.HiddenFor(x => x.GroupOfBagContents[Index].PKBagContentsID)
+                <td>@Html.DisplayFor(x => x.SingleBugOutBag.BagName)</td>
+
+                <td>@Html.DisplayFor(x => x.GroupOfItems[Index].ItemName)</td>
+            </tr>
+            <tr>
+                <td>Total Survival Rate goes here</td>
+                <td>Total Cost goes here</td>
+            </tr>
+        }
+    </table>
+}

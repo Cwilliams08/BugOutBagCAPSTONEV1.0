@@ -1,0 +1,32 @@
+﻿@model BugOutBagCAPSTONE.Models.ItemViewModel
+
+@{
+    ViewBag.Title = "AddItem";
+    Layout = "~/Views/Shared/SupplierLayout.cshtml";
+}
+
+<h2>Add Item</h2>
+
+@using (Html.BeginForm("AddItem", "Items", FormMethod.Post))
+{
+
+
+
+    <table>
+        <tr>
+            <td>Item Name</td>
+            <td>Details</td>
+            <td>Cost</td>
+            <td>Survival Rate Increase</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(XhtmlMobileDocType => XhtmlMobileDocType.SingleItem.ItemName)</td>
+            <td>@Html.TextBoxFor(XhtmlMobileDocType => XhtmlMobileDocType.SingleItem.Details)</td>
+            <td>@Html.TextBoxFor(XhtmlMobileDocType => XhtmlMobileDocType.SingleItem.Cost)</td>
+            <td>@Html.TextBoxFor(XhtmlMobileDocType => XhtmlMobileDocType.SingleItem.SurvRate)</td>
+        </tr>
+        <tr>
+            <td><input type="submit" title="Add Item" /></td>
+        </tr>
+    </table>
+}
